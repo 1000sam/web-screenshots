@@ -28,10 +28,14 @@ class Driver(PhantomJS):
 
 @app.route("/")
 def index():
-    url = request.args.get("url", "https://e.cdn.1000mercis.com.s3.amazonaws.com/0_service_qualite/livetweets/")
+    url = request.args.get("url", "http://e.cdn.1000mercis.com.s3.amazonaws.com/0_service_qualite/livetweets/")
     width = int(request.args.get("w", 1000))
     min_height = int(request.args.get("h", 400))
     wait_time = float(request.args.get("t", 20)) / 1000  # ms
+
+    if not url:
+        return "Example: <a href='http://scrn.herokuapp.com/?url=http://e.cdn.1000mercis.com.s3.amazonaws.com/0_service_qualite/livetweets/&w=1200'>" \
+               "http://scrn.herokuapp.com/?url=http://e.cdn.1000mercis.com.s3.amazonaws.com/0_service_qualite/livetweets/</a>"
 
     driver = Driver()
     driver.set_window_position(0, 0)
