@@ -28,7 +28,7 @@ class Driver(PhantomJS):
 
 @app.route("/")
 def index():
-    url = request.args.get("url", "http://e.cdn.1000mercis.com.s3.amazonaws.com/0_service_qualite/livetweets/")
+    url = request.args.get("url", "")
     width = int(request.args.get("w", 1000))
     min_height = int(request.args.get("h", 400))
     wait_time = float(request.args.get("t", 20)) / 1000  # ms
