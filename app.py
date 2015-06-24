@@ -34,8 +34,7 @@ def index():
     wait_time = float(request.args.get("t", 20)) / 1000  # ms
 
     if not url:
-        return "Example: <a href='http://scrn.herokuapp.com/?url=http://en.ig.ma/&w=1200'>" \
-               "http://scrn.herokuapp.com/?url=http://en.ig.ma/</a>"
+        return 'http://scrn.herokuapp.com/?url=http://e.cdn.1000mercis.com.s3.amazonaws.com/0_service_qualite/livetweets/landingtweets.html/&w=1200'
 
     driver = Driver()
     driver.set_window_position(0, 0)
